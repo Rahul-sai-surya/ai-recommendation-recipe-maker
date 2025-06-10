@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recipe Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Recipe Generator 🍽️</h1>
+        <p>Enter a dish name and ingredients to generate a recipe!</p>
+
+        <input type="text" id="recipe_name" placeholder="Enter recipe name (e.g., Pasta, Soup)">
+        <input type="text" id="ingredients" placeholder="Enter ingredients (comma-separated)">
+        
+        <label for="diet">Dietary Preference:</label>
+        <select id="diet">
+            <option value="any">Any</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="gluten-free">Gluten-Free</option>
+        </select>
+
+        <button onclick="generateRecipe()">Generate Recipe</button>
+        
+        <!-- Loading spinner -->
+        <div id="loading" class="loading-spinner" style="display: none;"></div>
+
+        <h2>Generated Recipe:</h2>
+        <div id="recipe"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
